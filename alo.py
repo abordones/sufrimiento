@@ -1,2 +1,0 @@
-print("Bv")
-#alo funciona?
