@@ -1,5 +1,7 @@
 import tkinter as tk
 import tkinter.filedialog as filedialog
+import os
+
 from tkinter import messagebox
 
 class MainWindow(tk.Tk):
@@ -44,7 +46,7 @@ class MainWindow(tk.Tk):
         load_button.pack(pady=10)
 
         # Cargar archivo de ejemplo
-        with open('horario_ejemplo.txt') as f:
+        with open(f"{os.path.abspath(os.path.join(os.path.abspath(os.path.dirname(__file__)), os.pardir))}\ConexionBDD\horario_ejemplo.txt") as f:
             horario_text = f.read()
         self.horario_text.insert('end', horario_text)
 
@@ -76,3 +78,5 @@ if __name__ == '__main__':
     main_window = MainWindow()
 
     # Configuración
+    main_window.mainloop()
+
